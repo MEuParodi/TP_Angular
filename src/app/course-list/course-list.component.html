@@ -1,0 +1,22 @@
+
+
+<h3>Cursos Náuticos</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Meses</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses" [ngClass]="{'vacancies': course.vacancies}">
+            <td>{{course.name }}</td>
+            <td>{{course.desc}}</td>
+            <td>{{course.length}}</td>
+            <td>{{course.price | currency}}</td>
+            <td><span class="badge badge-warning" *ngIf="!course.vacancies">NO HAY VACANTES</span></td>
+        </tr>
+    </tbody>
+</table>
